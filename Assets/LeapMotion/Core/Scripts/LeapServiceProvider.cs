@@ -544,8 +544,7 @@ namespace Leap.Unity {
       dest.CopyFrom(source).Transform(transform.GetLeapMatrix());
     }
 
-    #endregion
-
+        #endregion
   }
 
 }
