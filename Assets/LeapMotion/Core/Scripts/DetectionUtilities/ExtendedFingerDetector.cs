@@ -36,7 +36,7 @@ namespace Leap.Unity {
     [Units("seconds")]
     [MinValue(0)]
     public float Period = .1f; //seconds
-
+    public int extendedCount;
     /**
      * The HandModelBase instance to observe. 
      * Set automatically if not explicitly set in the editor.
@@ -128,7 +128,7 @@ namespace Leap.Unity {
               && matchFingerState(hand.Fingers[3], Ring)
               && matchFingerState(hand.Fingers[4], Pinky);
 
-            int extendedCount = 0;
+            extendedCount = 0;
             for (int f = 0; f < 5; f++) {
               if (hand.Fingers[f].IsExtended) {
                 extendedCount++;
