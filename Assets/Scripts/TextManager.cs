@@ -3,48 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum State
-{
-    Start = 0,
-    Begin = 1,
-    Alphabet = 2,
-    Question = 3,
-    Intrus = 4,
-    Fin = 5
-}
 
 public class TextManager : MonoBehaviour
 {
     public Text text;
-    public State state;
+    public GameObject currentstate;
+    public CurrentState.State cState;
 
     void Start()
     {
-        state = State.Start;
+        cState = currentstate.GetComponent<CurrentState>().state;
         text.text = "";
     }
 
     void Update()
     {
-        switch (state)
+        switch (cState)
         {
-            case State.Start:
+            case CurrentState.State.Start:
                 text.text = "...";
                 break;
-            case State.Begin:
+            case CurrentState.State.Begin:
                 text.text = "Bonjour voyageur...";
                 break;
-            case State.Alphabet:
+            case CurrentState.State.Alphabet:
                 text.text = "Trouvez l'élément";
                 break;
-            case State.Question:
+            case CurrentState.State.Question:
                 text.text = "Quel est ...";
                 break;
 
-            case State.Intrus:
+            case CurrentState.State.Intrus:
                 text.text = "Trouvez l'intrus";
                 break;
-            case State.Fin:
+            case CurrentState.State.Fin:
                 text.text = "Bon voyage, jeune aventurier";
                 break;
 
