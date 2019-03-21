@@ -19,6 +19,10 @@ public class NumberFingers : MonoBehaviour
     public Leap.Unity.ExtendedFingerDetector fingers;
     public bool isNumber=false;
     public Text text;
+    public Text countdown;
+    private int previousFinger = -1;
+    public float timeLeft = 3.0f;
+    public CurrentState currentstate;
 
     void Start()
     {
@@ -28,29 +32,81 @@ public class NumberFingers : MonoBehaviour
     void Update()
     {
         nbFinger = fingers.extendedCount;
+        if (timeLeft < 0)
+        {
+            switch (nbFinger)
+            {
+                case 1:
+                    currentstate.state = CurrentState.State.Intrus;
+                    countdown.text = "";
+                    break;
+
+                case 2:
+                    currentstate.state = CurrentState.State.Loose;
+                    countdown.text = "";
+                    break;
+
+                case 3:
+                    currentstate.state = CurrentState.State.Loose;
+                    countdown.text = "";
+                    break;
+
+                default:
+                    text.text = "?";
+                    break;
+            }
+        }
+        if(previousFinger != nbFinger)
+        {
+            timeLeft = 3.0f;
+        }
         switch(nbFinger)
            {
             case 0:
-                text.text = "0";
+                //text.text = "Votre réponse : 0";
+                //timeLeft -= Time.deltaTime;
+                //countdown.text = "" + Mathf.Round(timeLeft);
+                previousFinger = 0;
+                countdown.text = "";
+                text.text = "";
                 break;
             case 1:
-                text.text = "1";
-            break;
+                text.text = "Votre réponse : 1";
+                timeLeft -= Time.deltaTime;
+                countdown.text = "" + Mathf.Round(timeLeft);
+                previousFinger = 1;
+                break;
 
             case 2:
-                text.text = "2";
+                text.text = "Votre réponse : 2";
+                timeLeft -= Time.deltaTime;
+                countdown.text = "" + Mathf.Round(timeLeft);
+                previousFinger = 2;
                 break;
 
             case 3:
-                text.text = "3";
+                text.text = "Votre réponse : 3";
+                timeLeft -= Time.deltaTime;
+                countdown.text = "" + Mathf.Round(timeLeft);
+                previousFinger = 3;
                 break;
 
             case 4:
-                text.text = "4";
+                //text.text = "Votre réponse : 4";
+                //timeLeft -= Time.deltaTime;
+                //countdown.text = "" + Mathf.Round(timeLeft);
+                previousFinger = 4;
+                countdown.text = "";
+                text.text = "";
                 break;
 
             case 5:
-                text.text = "5";
+                //text.text = "Votre réponse : 5";
+                //timeLeft -= Time.deltaTime;
+                //countdown.text = "" + Mathf.Round(timeLeft);
+                previousFinger = 5;
+                countdown.text = "";
+                text.text = "";
                 break;
 
             default:

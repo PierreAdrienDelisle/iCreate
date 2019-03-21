@@ -18,6 +18,7 @@ public class TextManager : MonoBehaviour
 
     void Update()
     {
+        cState = currentstate.GetComponent<CurrentState>().state;
         switch (cState)
         {
             case CurrentState.State.Start:
