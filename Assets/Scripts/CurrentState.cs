@@ -11,7 +11,8 @@ public class CurrentState : MonoBehaviour
         Alphabet = 2,
         Question = 3,
         Intrus = 4,
-        Fin = 5
+        Win = 5,
+        Loose = 6
     }
     public State state;
     void SetState(State newState)
