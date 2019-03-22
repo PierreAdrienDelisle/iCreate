@@ -13,6 +13,8 @@ public class PuzzleManager : MonoBehaviour
     private CurrentState.State cState;
     public GameObject RightHand;
     public GameObject LeftHand;
+    public GameObject WaitingScreen;
+    public GameObject BeginScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,10 @@ public class PuzzleManager : MonoBehaviour
     {
         currentstate.state = CurrentState.State.Question;
     }
+    void BeginAct()
+    {
+        BeginScreen.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -43,11 +49,15 @@ public class PuzzleManager : MonoBehaviour
             case CurrentState.State.Start:
                 if (LeftHand.activeInHierarchy == true || RightHand.activeInHierarchy == true)
                 {
+                    WaitingScreen.SetActive(false);
                     currentstate.state = CurrentState.State.Begin;
                 }
                 break;
             case CurrentState.State.Begin:
+                BeginScreen.SetActive(true);
+                Invoke("BeginAct", 6);
                 Invoke("Alphabet", 6);
+
                 break;
             case CurrentState.State.Alphabet:
                 roocoEnigma.SetActive(true);
@@ -64,6 +74,7 @@ public class PuzzleManager : MonoBehaviour
                 intruderEnigma.SetActive(true);
                 break;
             case CurrentState.State.Win:
+                intruderEnigma.SetActive(false);
                 winState.SetActive(true);
                 break;
             case CurrentState.State.Loose:
@@ -72,7 +83,6 @@ public class PuzzleManager : MonoBehaviour
                 girardetEnigma.SetActive(false);
                 intruderEnigma.SetActive(false);
                 winState.SetActive(false);
-
                 break;
         }
     }
