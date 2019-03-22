@@ -4,6 +4,7 @@ Shader "Custom/GrabPass Distortion"
 	Properties
 	{
 		_MainTex ("Texture (R,G=X,Y Distortion; B=Mask; A=Unused)", 2D) = "white" {}
+		_MyTexture("My Texture", 2D) = "white" { }
 		_Tint ("Tint (RGB)", Color) = (0.5,0.5,0.5,1)
 		_IntensityAndScrolling ("Intensity (XY); Scrolling (ZW)", Vector) = (0.1,0.1,1,1)
 		_DistanceFade ("Distance Fade (X=Near, Y=Far, ZW=Unused)", Float) = (20, 50, 0, 0)
@@ -28,7 +29,7 @@ Shader "Custom/GrabPass Distortion"
 		// See http://docs.unity3d.com/Manual/SL-GrabPass.html
 		// Will grab screen contents into a texture, but will only do that once per frame for
 		// the first object that uses the given texture name. 
-		GrabPass{ "_GrabTexture" }
+		//GrabPass{ "_GrabTexture" }
 	
 		Pass
 		{  
