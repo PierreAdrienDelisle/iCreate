@@ -11,7 +11,10 @@ sampler2D _MainTex;
 float4 _MainTex_ST;
 
 // _GrabTexture contains the contents of the screen where the object is about to be drawn.
-sampler2D _GrabTexture;
+sampler2D _MyTexture;
+
+// _MainTex tiling and offset properties.
+float4 _MyTexture_ST;
 			
 // x=horizontal intensity, y=vertical intensity
 // z=horizontal scrolling speed, w=vertical scrolling speed
@@ -39,6 +42,7 @@ struct v2f
 	fixed4 color   : COLOR;		// a=distortion intensity multiplier
 	half4 texcoord : TEXCOORD0; // xy=distort uv, zw=mask uv
 	half4 screenuv : TEXCOORD1; // xy=screenuv, z=distance dependend intensity, w=depth
+	half2 imagecoord : TEXCOORD2;
 };
 
 // ----------------------------------------------------------------------------
@@ -81,6 +85,8 @@ v2f vert (appdata_t v)
 	o.screenuv.z = saturate((_DistanceFade.y - depth) / (_DistanceFade.y - _DistanceFade.x));
 	o.screenuv.w = depth;
 
+	o.imagecoord.xy = TRANSFORM_TEX(v.texcoord, _MyTexture);
+
 	return o;
 }
 		
@@ -120,16 +126,17 @@ fixed4 frag (v2f i) : COLOR
 #endif					
 
 	// get screen space position of current pixel
-	half2 uv = i.screenuv.xy + offset;
+	half2 uv = i.imagecoord.xy + offset;
 
 #if MIRROR_EDGE
 	// Mirror uv's when it goes out of the screen.
 	// This avoids streched seams at screen borders by introducing
 	// these kind of mirroring artifacts. It looks less disturbing than the border seams though.
 	uv = PingPong(uv, 1);
+
 #endif
 
-	half4 color = tex2D(_GrabTexture, uv);
+	half4 color = tex2D(_MyTexture, uv);
 #if ENABLE_TINT
 	color.rgb *= tint * 2;
 #endif
@@ -145,6 +152,9 @@ fixed4 frag (v2f i) : COLOR
 #endif
 
 	//color.rgb = float3(fade,fade,fade)*15;
+
+	// BLUR
+
 	return color;
 }
 
