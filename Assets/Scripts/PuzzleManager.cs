@@ -57,9 +57,9 @@ public class PuzzleManager : MonoBehaviour
                 BeginScreen.SetActive(true);
                 Invoke("BeginAct", 6);
                 Invoke("Alphabet", 6);
-
                 break;
             case CurrentState.State.Alphabet:
+                BeginScreen.SetActive(false);
                 roocoEnigma.SetActive(true);
                 //Invoke("Question", 6);
                 break;

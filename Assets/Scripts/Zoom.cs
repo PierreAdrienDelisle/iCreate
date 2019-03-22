@@ -15,13 +15,14 @@ public class Zoom : MonoBehaviour
     public float baseY;
     public float diffY;
     public float diffX;
-    public float diffFacteur=20.0f;
+    public float diffFacteurX=20.0f;
+    public float diffFacteurY = 20.0f;
 
     public void zoomIn()
     {
         diffY = baseY - vecfingerPos.y;
         diffX = baseX - vecfingerPos.x;
-        newPos = new Vector3(pos.x - diffFacteur * diffX, pos.y - diffFacteur * diffY, pos.z - facteur);
+        newPos = new Vector3(pos.x - diffFacteurX * diffX, pos.y - diffFacteurY * diffY, pos.z - facteur);
         mainCam.transform.localPosition = newPos;
         isZooming = true;
     }

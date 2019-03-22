@@ -11,6 +11,7 @@ public class LookHighlight : MonoBehaviour
     public float timeLeft = 3.0f;
     public CurrentState currentstate;
     public CurrentState.State newState;
+    public GameObject roocoEnigma;
     private bool isActive = false;
     public void Start()
     {
@@ -31,19 +32,18 @@ public class LookHighlight : MonoBehaviour
         target.SetActive(false);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (isActive)
         {
             timeLeft -= Time.deltaTime;
             text.text = "" + Mathf.Round(timeLeft);
         }
-
         if (timeLeft < 0)
         {
+            roocoEnigma.SetActive(false);
             currentstate.state = newState;
             text.text = "";
-
         }
     }
 }
