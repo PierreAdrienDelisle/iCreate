@@ -13,6 +13,10 @@ public class ZoomChevre : MonoBehaviour
     public float Ymin = 0.89f;
     public float camX;
     public float camY;
+    public AudioSource Feedback;
+    public AudioClip RightNoise;
+    public AudioClip WrongNoise;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,7 @@ public class ZoomChevre : MonoBehaviour
 
         if (camX<Xmax &&  camX > Xmin && camY < Ymax && camY > Ymin)
         {
+            Feedback.PlayOneShot(RightNoise);
             Player.GetComponent<CurrentState>().state = CurrentState.State.Win;
             Debug.Log("CHEEEVRE");
         }

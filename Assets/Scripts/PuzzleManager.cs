@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class PuzzleManager : MonoBehaviour
     {
         BeginScreen.SetActive(false);
     }
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -76,6 +82,7 @@ public class PuzzleManager : MonoBehaviour
             case CurrentState.State.Win:
                 intruderEnigma.SetActive(false);
                 winState.SetActive(true);
+                Invoke("ReloadScene", 20);
                 break;
             case CurrentState.State.Loose:
                 looseState.SetActive(true);
@@ -83,6 +90,7 @@ public class PuzzleManager : MonoBehaviour
                 girardetEnigma.SetActive(false);
                 intruderEnigma.SetActive(false);
                 winState.SetActive(false);
+                Invoke("ReloadScene", 20);
                 break;
         }
     }

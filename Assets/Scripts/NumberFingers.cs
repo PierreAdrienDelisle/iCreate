@@ -21,8 +21,11 @@ public class NumberFingers : MonoBehaviour
     public Text text;
     public Text countdown;
     private int previousFinger = -1;
-    public float timeLeft = 3.0f;
+    public float timeLeft = 5.0f;
     public CurrentState currentstate;
+    public AudioSource Feedback;
+    public AudioClip RightNoise;
+    public AudioClip WrongNoise;
 
     void Start()
     {
@@ -38,17 +41,20 @@ public class NumberFingers : MonoBehaviour
             {
                 case 1:
                     countdown.text = "";
-                    currentstate.state = CurrentState.State.Intrus;
+                    Feedback.PlayOneShot(WrongNoise);
+                    currentstate.state = CurrentState.State.Loose;
                     break;
 
                 case 2:
                     countdown.text = "";
+                    Feedback.PlayOneShot(WrongNoise);
                     currentstate.state = CurrentState.State.Loose;
                     break;
 
                 case 3:
                     countdown.text = "";
-                    currentstate.state = CurrentState.State.Loose;
+                    Feedback.PlayOneShot(RightNoise);
+                    currentstate.state = CurrentState.State.Intrus;
                     break;
 
                 default:
@@ -60,14 +66,11 @@ public class NumberFingers : MonoBehaviour
         {
             if (previousFinger != nbFinger)
             {
-                timeLeft = 3.0f;
+                timeLeft = 5.0f;
             }
             switch (nbFinger)
             {
                 case 0:
-                    //text.text = "Votre réponse : 0";
-                    //timeLeft -= Time.deltaTime;
-                    //countdown.text = "" + Mathf.Round(timeLeft);
                     previousFinger = 0;
                     countdown.text = "";
                     text.text = "";
@@ -94,18 +97,12 @@ public class NumberFingers : MonoBehaviour
                     break;
 
                 case 4:
-                    //text.text = "Votre réponse : 4";
-                    //timeLeft -= Time.deltaTime;
-                    //countdown.text = "" + Mathf.Round(timeLeft);
                     previousFinger = 4;
                     countdown.text = "";
                     text.text = "";
                     break;
 
                 case 5:
-                    //text.text = "Votre réponse : 5";
-                    //timeLeft -= Time.deltaTime;
-                    //countdown.text = "" + Mathf.Round(timeLeft);
                     previousFinger = 5;
                     countdown.text = "";
                     text.text = "";
