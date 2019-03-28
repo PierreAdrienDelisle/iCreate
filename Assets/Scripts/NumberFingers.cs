@@ -21,7 +21,7 @@ public class NumberFingers : MonoBehaviour
     public Text text;
     public Text countdown;
     private int previousFinger = -1;
-    public float timeLeft = 5.0f;
+    public float timeLeft = 3.0f;
     public CurrentState currentstate;
     public AudioSource Feedback;
     public AudioClip RightNoise;
@@ -66,7 +66,7 @@ public class NumberFingers : MonoBehaviour
         {
             if (previousFinger != nbFinger)
             {
-                timeLeft = 5.0f;
+                timeLeft = 3.0f;
             }
             switch (nbFinger)
             {

@@ -8,7 +8,7 @@ public class LookHighlight : MonoBehaviour
 {
     public Text text;
     public GameObject target;
-    public float timeLeft = 5.0f;
+    public float timeLeft = 3.0f;
     public CurrentState currentstate;
     public CurrentState.State newState;
     public GameObject roocoEnigma;
@@ -31,7 +31,7 @@ public class LookHighlight : MonoBehaviour
     public void targetFalse()
     {
         isActive = false;
-        timeLeft = 5.0f;
+        timeLeft = 3.0f;
         text.text = "";
         target.SetActive(false);
     }
