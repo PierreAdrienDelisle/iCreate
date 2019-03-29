@@ -47,5 +47,12 @@ public class Zoom : MonoBehaviour
             baseY = vecfingerPos.y;
         }
         vecfingerPos = finger.GetComponent<Transform>().position;
+        if (isZooming)
+        {
+            diffY = baseY - vecfingerPos.y;
+            diffX = baseX - vecfingerPos.x;
+            newPos = new Vector3(pos.x - diffFacteurX * diffX, pos.y - diffFacteurY * diffY, pos.z - facteur);
+            mainCam.transform.localPosition = newPos;
+        }
     }
 }

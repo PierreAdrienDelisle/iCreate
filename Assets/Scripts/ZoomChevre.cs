@@ -7,8 +7,8 @@ public class ZoomChevre : MonoBehaviour
     public Camera mainCam;
     public GameObject Player;
     public CurrentState.State cState;
-    public float Xmax = -2.3f;
-    public float Xmin = -2.65f;
+    public float Xmax = -2.35f;
+    public float Xmin = -2.45f;
     public float Ymax = 1f;
     public float Ymin = 0.89f;
     public float camX;
