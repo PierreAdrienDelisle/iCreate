@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CurrentState : MonoBehaviour
 {
+    //Contains the current state of the game
+
     public enum State
     {
         Start = 0,
@@ -15,23 +17,21 @@ public class CurrentState : MonoBehaviour
         Loose = 6
     }
     public State state;
+
     void SetState(State newState)
     {
         state = newState;
     }
+
     State GetState()
     {
         return state;
     }
+
     // Start is called before the first frame update
     void Start()
     {
         state = State.Start;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

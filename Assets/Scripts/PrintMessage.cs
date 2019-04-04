@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class PrintMessage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Testing class to print message according to leap motion events
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void PrintActivateMessage()
     {
         print("Extended finger Activated");

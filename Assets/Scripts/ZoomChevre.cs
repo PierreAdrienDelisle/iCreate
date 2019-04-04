@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class ZoomChevre : MonoBehaviour
 {
+    //Manage the winning state if on the position of the goat
     public Camera mainCam;
     public GameObject Player;
     public CurrentState.State cState;
+
+    public AudioSource Feedback;
+    public AudioClip RightNoise;
+    public AudioClip WrongNoise;
+
     public float Xmax = -2.35f;
     public float Xmin = -2.45f;
     public float Ymax = 1f;
     public float Ymin = 0.89f;
-    public float camX;
-    public float camY;
-    public AudioSource Feedback;
-    public AudioClip RightNoise;
-    public AudioClip WrongNoise;
- 
+
+    private float camX;
+    private float camY;
+
+
     // Start is called before the first frame update
     void Start()
     {

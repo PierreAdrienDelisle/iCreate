@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Zoom : MonoBehaviour
 {
+    //Manage the gameplay feature : zoom when fingers are pinching
     public Camera mainCam;
-    public float facteur;
     public Vector3 pos;
     public bool isZooming = false;
     public GameObject finger;
-    public Vector3 newPos;
-    public Vector3 vecfingerPos;
+
+    public float facteur;
     public float baseX;
     public float baseY;
     public float diffY;
     public float diffX;
     public float diffFacteurX=20.0f;
     public float diffFacteurY = 20.0f;
+
+    private Vector3 newPos;
+    private Vector3 vecfingerPos;
 
     public void zoomIn()
     {

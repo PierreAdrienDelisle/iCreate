@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
+    //Switch active container according to the current state
     public CurrentState currentstate;
     public GameObject roocoEnigma;
     public GameObject girardetEnigma;
     public GameObject intruderEnigma;
     public GameObject winState;
     public GameObject looseState;
+    public GameObject WaitingScreen;
+    public GameObject BeginScreen;
+
     private CurrentState.State cState;
     public GameObject RightHand;
     public GameObject LeftHand;
-    public GameObject WaitingScreen;
-    public GameObject BeginScreen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,12 +70,10 @@ public class PuzzleManager : MonoBehaviour
             case CurrentState.State.Alphabet:
                 BeginScreen.SetActive(false);
                 roocoEnigma.SetActive(true);
-                //Invoke("Question", 6);
                 break;
             case CurrentState.State.Question:
                 roocoEnigma.SetActive(false);
                 girardetEnigma.SetActive(true);
-                //Invoke("Intrus", 6);
                 break;
 
             case CurrentState.State.Intrus:

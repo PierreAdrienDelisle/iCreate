@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HandRaycast : MonoBehaviour
 {
+    //DEPRECATED
 
     Hand leapHand;
     FingerModel finger;
@@ -13,15 +14,6 @@ public class HandRaycast : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        /*Controller controller = new Controller();
-        Frame frame = controller.Frame(); // controller is a Controller object
-        if (frame.Hands.Count > 0)
-        {
-            List<Hand> hands = frame.Hands;
-            leapHand = hands[0];
-        }
-        finger = leapHand.Fingers;
-        Finger.FingerType fingerType = finger.Type;*/
         handModel = GetComponent<HandModel>();
         leapHand = handModel.GetLeapHand();
         if (leapHand == null) Debug.LogError("No leap_hand founded");

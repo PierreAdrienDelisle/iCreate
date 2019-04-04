@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class LookHighlight : MonoBehaviour
 {
+    //Manage the highlight on objects at the first enigma : display new images when pointing
     public Text text;
     public GameObject target;
     public float timeLeft = 3.0f;
+
     public CurrentState currentstate;
     public CurrentState.State newState;
     public GameObject roocoEnigma;
-    private bool isActive = false;
+
     public AudioSource Feedback;
     public AudioClip RightNoise;
     public AudioClip WrongNoise;
+
+    private bool isActive = false;
 
     public void Start()
     {

@@ -1,31 +1,26 @@
-﻿/******************************************************************************
- * Copyright (C) Leap Motion, Inc. 2011-2018.                                 *
- * Leap Motion proprietary and confidential.                                  *
- *                                                                            *
- * Use subject to the terms of the Leap Motion SDK Agreement available at     *
- * https://developer.leapmotion.com/sdk_agreement, or another agreement       *
- * between Leap Motion and you, your company or other organization.           *
- ******************************************************************************/
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System;
 using UnityEngine.UI;
 
 public class NumberFingers : MonoBehaviour
 {
+    //Manage the gameplay feature : count fingers and recognize a number
     public GameObject hand;
     public int nbFinger;
     public Leap.Unity.ExtendedFingerDetector fingers;
     public bool isNumber=false;
+
     public Text text;
     public Text countdown;
-    private int previousFinger = -1;
-    public float timeLeft = 3.0f;
     public CurrentState currentstate;
+
     public AudioSource Feedback;
     public AudioClip RightNoise;
     public AudioClip WrongNoise;
+
+    private int previousFinger = -1;
+    private float timeLeft = 3.0f;
 
     void Start()
     {

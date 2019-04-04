@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    //Manage the time left of the game and display the visual feedback
+
     public float timer = 300f;
     public GameObject Player;
     public CurrentState.State cState;
@@ -27,7 +29,7 @@ public class Timer : MonoBehaviour
         cState = Player.GetComponent<CurrentState>().state;
         if (cState == CurrentState.State.Start || cState == CurrentState.State.Win)
         {
-            //FREEZE TIMER
+            //Freeze timer
 
         }
         else

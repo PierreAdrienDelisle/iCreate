@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Pointer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+    //DEPRECATED
 
     // Update is called once per frame
     void Update()
