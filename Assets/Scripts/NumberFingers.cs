@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class NumberFingers : MonoBehaviour
 {
-    //Manage the gameplay feature : count fingers and recognize a number
+    // Manages the gameplay feature : fingers count and recognizing a number
+    // recognizes the numbers 1, 2 and 3 only
     public GameObject hand;
     public int nbFinger;
     public Leap.Unity.ExtendedFingerDetector fingers;
@@ -25,10 +26,10 @@ public class NumberFingers : MonoBehaviour
     void Start()
     {
         fingers = hand.GetComponent<Leap.Unity.ExtendedFingerDetector>();
-
     }
     void Update()
     {
+        // the answer will not be checked if it isn't stable during 3 seconds
         nbFinger = fingers.extendedCount;
         if (timeLeft < 0)
         {
@@ -47,12 +48,14 @@ public class NumberFingers : MonoBehaviour
                     break;
 
                 case 3:
+                    // 3 is the correct answer to the question
                     countdown.text = "";
                     Feedback.PlayOneShot(RightNoise);
                     currentstate.state = CurrentState.State.Intrus;
                     break;
 
                 default:
+                    // the number isn't recognized
                     text.text = "?";
                     break;
             }
@@ -61,10 +64,12 @@ public class NumberFingers : MonoBehaviour
         {
             if (previousFinger != nbFinger)
             {
+                // reset time
                 timeLeft = 3.0f;
             }
             switch (nbFinger)
             {
+                // update time countdown
                 case 0:
                     previousFinger = 0;
                     countdown.text = "";

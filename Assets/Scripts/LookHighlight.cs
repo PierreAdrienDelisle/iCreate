@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LookHighlight : MonoBehaviour
 {
-    //Manage the highlight on objects at the first enigma : display new images when pointing
+    //Manage the highlight on objects at the first enigma : display new images when pointing and check answer to puzzle 2
     public Text text;
     public GameObject target;
     public float timeLeft = 3.0f;
@@ -26,12 +26,14 @@ public class LookHighlight : MonoBehaviour
         target.SetActive(false);
     }
 
+    // highlight game object
     public void targetActive()
     {
         isActive = true;
         target.SetActive(true);
     }
 
+    // disable highlight & reset timer
     public void targetFalse()
     {
         isActive = false;
@@ -40,6 +42,7 @@ public class LookHighlight : MonoBehaviour
         target.SetActive(false);
     }
 
+    // update timer & check choice
     void Update()
     {
         if (isActive)

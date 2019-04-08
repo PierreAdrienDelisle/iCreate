@@ -29,6 +29,7 @@ public class ZoomChevre : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Checks if you have correctly zoomed on the goat
     void Update()
     {
         camX = mainCam.transform.localPosition.x;

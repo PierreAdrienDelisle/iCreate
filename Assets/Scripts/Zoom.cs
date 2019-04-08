@@ -21,6 +21,7 @@ public class Zoom : MonoBehaviour
     private Vector3 newPos;
     private Vector3 vecfingerPos;
 
+    // When the fingers are pinched
     public void zoomIn()
     {
         diffY = baseY - vecfingerPos.y;
@@ -30,11 +31,13 @@ public class Zoom : MonoBehaviour
         isZooming = true;
     }
 
+    // When the fingers are unpinched
     public void zoomOut()
     {
         mainCam.transform.localPosition = pos;
         isZooming = false;
     }
+
     // Start is called before the first frame update
     void Start()
     {

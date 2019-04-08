@@ -24,6 +24,8 @@ public class Timer : MonoBehaviour
     }
 
     // Update is called once per frame
+    // The player loses if the enigma isn't solved in due time.
+    // Otherwise, display a new bubble every minute for the next five minutes.
     void Update()
     {
         cState = Player.GetComponent<CurrentState>().state;
