@@ -34,8 +34,16 @@ Projet iCreate 2019
   
   Vous survolez le totem avec votre main et le leap motion va capter votre main et la faire apparaitre afin de répondre.
 
-# Installation du projet
+
+#  Matériel nécessaire
+  Un  ordinateur sous une version de Windows récente.
+  Un leap motion
+  Un projecteur à longue focale avec haut-parleurs (sinon possibilité de prendre des haut-parleurs indépendants)
+  
+
+# Logiciels nécessaires et procédure d'installation
   Le projet est un jeu créé en langage C# via le logiciel Unity.
+  L'application est en forme de .exe donc exécutable sous Windows.
   
   Tout d'abord, il faut vous fournir :
   
