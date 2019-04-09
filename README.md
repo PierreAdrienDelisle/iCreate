@@ -37,7 +37,9 @@ Projet iCreate 2019
 
 #  Matériel nécessaire
   Un  ordinateur sous une version de Windows récente.
+  
   Un leap motion
+  
   Un projecteur à longue focale avec haut-parleurs (sinon possibilité de prendre des haut-parleurs indépendants)
   
 
