@@ -58,5 +58,28 @@ Projet iCreate 2019
  Il faut simplement lancer le .exe qui contient le jeu (seulement compatible Windows).
  
  Dans le projet, l'application à lancer s'appelle iCreate.exe dans le dossier "Test"
-      
-    
+ 
+# Installation du matériel
+  Tout d'abord, il faut mettre en place la structure de la tente au centre de laquelle on trouvera le projecteur ainsi que le capteur leap motion. Pour cela, il vous faut :
+  
+  ![image de tasseaux de bois, vis et équerre en métal](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/materiel.jpg)
+  
+  Assemblez-les pour créer la structure suivante :
+  
+  ![image des premiers éléments de structure](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/installation_structure_1.jpg)
+  
+  Puis former le squelette global:
+  
+  ![image de la structure bois](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/installation_structure_2.jpg)
+  
+  Positionnez ensuite les tapisseries ou drapés (au préalable décorés de motifs dans les tons de l'oeuvre étudiée) par dessus la structure de manière à couvrir l'intérieur. Faire tenir avec des punaises ou des agrafes.
+  
+  ![image des drapés recouvrant la structure](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/vue_arriere.jpg)
+  
+  Laissez une ouverture sur un côté pour pouvoir accéder à l'intérieur de la tente, puis installez le projecteur et les indices à l'intérieur.
+  
+  ![image de l'entrée de la tente](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/vue_avant.jpg)
+  
+  Le projecteur est dissimulé sur un trépied situé à l'intérieur d'un "totem" de carton, lui aussi marqué de motifs tels qu'on en retrouve à l'extérieur de la tente. Au-dessus de ce totem, le capteur du leap motion est fixé dans un encart pour une utilisation facile.
+
+  ![image du haut du totem](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/totem_haut.jpg)
