@@ -34,7 +34,13 @@ Projet iCreate 2019
   
   Vous survolez le totem avec votre main et le leap motion va capter votre main et la faire apparaitre afin de répondre.
 
+Les différentes mouvements reconnus par le leap motion sont :
 
+   - étape 1 : Pointer avec le doigt pour choisir ce qu'on a découvert dans la tente
+   - étape 2 : Faire des chiffres 1,2 ou 3 pour valider notre réponse à l'énigme
+   - étape 3 : Zoomer en faisant un mouvement de pincement avec les doigts pour trouver un élément intrus dans le tableau.
+    
+    
 #  Matériel nécessaire
   Un  ordinateur sous une version de Windows récente.
   
@@ -49,9 +55,9 @@ Projet iCreate 2019
   
   Tout d'abord, il faut vous fournir :
   
-      - d'un ordinateur
-      - d'un leap motion via USB
-      - d'un projecteur via HDMI
+   - d'un ordinateur
+   - d'un leap motion via USB
+   - d'un projecteur via HDMI
       
  Une fois l'ordinateur branché à ces deux appareils. 
  
@@ -59,6 +65,26 @@ Projet iCreate 2019
  
  Dans le projet, l'application à lancer s'appelle iCreate.exe dans le dossier "Test"
  
+# Scripts fournis dans le projet
+Les script utilisés dans le projet sont commentés afin de comprendre mieux leur utilisation. 
+Voici un résumé des features développées :
+  - ActivateZoom : active la feature de zoom lorsque son GameObject auquel le script est rataché devient actif
+  - CurrentState : stocke l'état courant du jeu (Début, énigme 1, énigme 2,...)
+  - LookHighlight : si actif va afficher un élément en surbrillance pour l'énigme 1 et change l'état.
+  - NumberFingers : gère la feature de compter le nombre de doigts "tendus" pour répondre à l'énigme 2.
+  - PrintMessage : contient beaucoup de méthodes afin d'afficher les événements détéctés par le leap motion
+  - PuzzleManager : observe le currentState et désactive la scène courante pour passer à la prochaine étape
+  - ResolveTime : si le joueur gagne, il obtient le temps qu'il a mit afin de résoudre le jeu.
+  - Timer : gère l'affichage du temps en bas à droite de l'écran
+  - Zoom : gère la feature de zoom quand il y a un pincement
+  - ZoomChevre : change l'état du jeu lorsque le joueur zoom sur la position de l'élément intrus
+  
+On utilise dans le projet, la librairie Orion fourni par le Leap Motion pour Unity avec des scripts de détection d'événements comme :
+  - LeapExtendedFingerDetector
+  - LeapPinchDetector
+  - ...
+  
+  
 # Installation du matériel
   Tout d'abord, il faut mettre en place la structure de la tente au centre de laquelle on trouvera le projecteur ainsi que le capteur leap motion. Pour cela, il vous faut :
   
