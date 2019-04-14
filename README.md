@@ -18,6 +18,17 @@ Projet iCreate 2019
   - Julia Haremza
   - Clara Saillant
   - Léa Manchajm
+  
+  
+ 
+ # [Rapport du projet complet](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Rapport%20du%20projet%20-%20Majiang_compressed.pdf)
+ 
+ Ci-dessus le lien vers le rapport du projet qui inclus:
+   - La problématique
+   - Le positionnement
+   - Le scénario d'usage
+   - L'univers graphique
+   - ...
 
 # Description du projet 
     
