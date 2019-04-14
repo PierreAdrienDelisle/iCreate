@@ -106,6 +106,10 @@ On utilise dans le projet, la librairie Orion fourni par le Leap Motion pour Uni
   
   ![image de l'entrée de la tente](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/readme/vue_devant.jpg)
   
+  ![schéma de l'intérieur de la tente](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/readme/interieur.jpg)
+  
   Le projecteur est dissimulé sur un trépied situé à l'intérieur d'un "totem" de carton, lui aussi marqué de motifs tels qu'on en retrouve à l'extérieur de la tente. Au-dessus de ce totem, le capteur du leap motion est fixé dans un encart pour une utilisation facile.
 
+  ![schéma du totem](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/readme/totem.jpg)
+  
   ![image du haut du totem](https://github.com/PierreAdrienDelisle/iCreate/blob/master/Assets/PNG/readme/totem_haut.jpg)
